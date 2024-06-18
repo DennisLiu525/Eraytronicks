@@ -5,7 +5,7 @@ const WhiteChinese0: React.FC = () => {
       <div className="flex overflow-hidden relative flex-col justify-center items-start px-16 py-20 mt-7 w-full font-bold text-white whitespace-nowrap min-h-[484px] max-md:px-5 max-md:max-w-full">
         <img
           loading="lazy"
-          srcSet="..."
+          srcSet="./images/HomeBG.png"
           className="object-cover absolute inset-0 size-full"
         />
       </div>
@@ -38,7 +38,7 @@ const WhiteChinese1: React.FC = () => {
         <div className="flex flex-col ml-5 w-[34%] max-md:ml-0 max-md:w-full">
           <img
             loading="lazy"
-            srcSet="..."
+            srcSet="./images/Chip.png"
             className="w-full aspect-square max-md:max-w-full"
           />
         </div>
@@ -88,7 +88,7 @@ const WhiteChinese2: React.FC = () => {
                   <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
                     <img
                       loading="lazy"
-                      srcSet="..."
+                      srcSet="./images/Cache.png"
                       className="mt-5 w-full aspect-square"
                     />
                   </div>
@@ -184,7 +184,7 @@ const WhiteChinese3: React.FC = () => {
                   <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
                     <img
                       loading="lazy"
-                      srcSet="..."
+                      srcSet="./images/AV.png"
                       className="grow w-full aspect-[0.96]"
                     />
                   </div>

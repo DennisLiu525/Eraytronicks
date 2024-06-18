@@ -1,54 +1,11 @@
 import React from "react";
 
-const WhiteEnglishHeader: React.FC = () => {
-  return (
-    <div className="flex flex-col">
-      <div className="self-center px-5 w-full max-w-[1474px] max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          <div className="flex flex-col w-[49%] max-md:ml-0 max-md:w-full">
-            <div className="grow max-md:mt-10 max-md:max-w-full">
-              <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-                <div className="flex flex-col w-[30%] max-md:ml-0 max-md:w-full">
-                  <img
-                    loading="lazy"
-                    srcSet="..."
-                    className="grow shrink-0 max-w-full aspect-[0.9] w-[154px] max-md:mt-3"
-                  />
-                </div>
-                <div className="flex flex-col ml-5 w-[70%] max-md:ml-0 max-md:w-full">
-                  <img
-                    loading="lazy"
-                    srcSet="..."
-                    className="grow mt-36 aspect-[11.11] w-[354px] max-md:mt-10"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="flex flex-col ml-5 w-[27%] max-md:ml-0 max-md:w-full">
-            <div className="flex gap-1 mt-9 text-5xl text-black max-md:mt-10 max-md:text-4xl">
-              <div className="grow max-md:text-4xl">Home |</div>
-              <div className="flex-auto max-md:text-4xl"> Cache$RAM |</div>
-            </div>
-          </div>
-          <div className="flex flex-col ml-5 w-[24%] max-md:ml-0 max-md:w-full">
-            <div className="flex gap-5 mt-10 text-5xl text-black max-md:mt-10 max-md:text-4xl">
-              <div className="grow max-md:text-4xl"> AVAXOTP |</div>
-              <div className="flex-auto max-md:text-4xl"> EN_US</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 const WhiteEnglish0: React.FC = () => {
   return (
     <div className="flex overflow-hidden relative flex-col justify-center items-start px-16 py-20 mt-7 w-full font-bold text-white min-h-[484px] max-md:px-5 max-md:max-w-full">
       <img
         loading="lazy"
-        srcSet="..."
+        srcSet="./images/HomeBG.png"
         className="object-cover absolute inset-0 size-full"
       />
       <div className="flex relative flex-col my-20 ml-14 max-md:my-10 max-md:max-w-full">
@@ -82,7 +39,7 @@ const WhiteEnglish1: React.FC = () => {
         <div className="flex flex-col ml-5 w-[30%] max-md:ml-0 max-md:w-full">
           <img
             loading="lazy"
-            srcSet="..."
+            srcSet="./images/Chip.png"
             className="w-full aspect-square max-md:max-w-full"
           />
         </div>
@@ -156,7 +113,7 @@ const WhiteEnglish2: React.FC = () => {
                 <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
                   <img
                     loading="lazy"
-                    srcSet="..."
+                    srcSet="./images/Cache.png"
                     className="self-stretch my-auto w-full aspect-square max-md:mt-10 max-md:max-w-full"
                   />
                 </div>
@@ -266,7 +223,7 @@ const WhiteEnglish3: React.FC = () => {
           <div className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
             <img
               loading="lazy"
-              srcSet="..."
+              srcSet="./images/AV.png"
               className="mt-2.5 w-full aspect-square max-md:mt-7"
             />
           </div>
