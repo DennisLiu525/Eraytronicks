@@ -51,7 +51,7 @@ const BlackChinese1: React.FC = () => {
 const BlackChinese2: React.FC = () => {
     return (
         <>
-            <div id="Cache$RAM" className="pt-32 scroll-mt-32 h-[100vh] flex flex-col px-7 pb-8 bg-black bg-opacity-95 rounded-[51px] max-md:px-5">
+            <div id="Cache$RAM" className="pt-0 scroll-mt-32 h-[100vh] flex flex-col px-7 pb-8 bg-black bg-opacity-95 rounded-[51px] max-md:px-5">
                 <div className="self-center text-8xl font-bold text-white max-md:max-w-full max-md:text-4xl">
                     Cache$RAM
                 </div>
@@ -138,7 +138,7 @@ const BlackChinese2: React.FC = () => {
                 <div className="self-center mt-16 text-6xl font-bold text-teal-300 text-opacity-80 max-md:mt-10 max-md:text-4xl">
                     雙電晶體結構
                 </div>
-                <div className="mt-4 text-3xl text-center text-white max-md:max-w-full">
+                <div className="mt-1 text-3xl text-center text-white max-md:max-w-full">
                     每個$RAM陣列中的單元由一個控制電晶體和一個浮閘源通道汲極存儲電晶體(FGST)組成。FGST可以簡單地通過一個閘極浮置的nFinFET來實現。這種1T-1FGST
                     $RAM單元僅使用核心
                     VDD 作為寫入電壓的Zener隧道機制。當控制閘電晶體關閉後，Zener隧道最終在FGST通道中暫時留下空洞。當控制閘電晶體打開時，可以通過FGST中的正向模式寄生BJT的貢獻來確定存儲的邏輯“1”。相反，沒有電流流動感知到邏輯“0”。
@@ -150,7 +150,7 @@ const BlackChinese2: React.FC = () => {
 
 const BlackChinese3: React.FC = () => {
     return (
-        <div id="AVAXOTP" className="pt-32 scroll-mt-32 h-[100vh] flex flex-col pb-12 bg-black bg-opacity-95 rounded-[51px] items-center">
+        <div id="AVAXOTP" className="pt-10 scroll-mt-32 h-[100vh] flex flex-col pb-12 bg-black bg-opacity-95 rounded-[51px] items-center">
             <h1 className="text-8xl font-bold text-white max-md:text-4xl">
                 AVAXOTP
             </h1>
