@@ -40,3 +40,23 @@
 .read-the-docs {
   color: #888;
 }
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.light-mode {
+  background-color: white;
+  color: black;
+}
+
+.dark-mode .dropdown {
+  background-color: black;
+  color: white;
+}
+
+.light-mode .dropdown {
+  background-color: white;
+  color: black;
+}

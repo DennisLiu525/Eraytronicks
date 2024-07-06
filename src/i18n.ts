@@ -11,6 +11,9 @@ const resources = {
     },
     zh_tw:{
         translation:translationZH_TW
+    },
+    zh_cn:{
+        translation:translationZH_CN
     }
 }
 

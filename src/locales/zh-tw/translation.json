@@ -1,6 +1,8 @@
 {
-    "Home":"首頁",
-    "About":"關於",
-    "Tech":"技術",
-    "News":"新聞"
+    "Home": "首頁",
+    "About": "關於",
+    "Tech": "技術",
+    "News": "新聞",
+    "Light Mode": "日間模式",
+    "Dark Mode": "夜間模式"
 }

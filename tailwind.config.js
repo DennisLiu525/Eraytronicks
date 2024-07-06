@@ -5,7 +5,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      whitespace: {
+        'pre-line': 'pre-line',
+      },
+    },
   },
   plugins: [],
 }

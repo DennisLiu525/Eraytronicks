@@ -41,8 +41,13 @@ const Header: React.FC = () => {
     }
   };
 
+  const commonStyles = {
+    backgroundColor: isBlack ? 'black' : 'white',
+    color: isBlack ? 'white' : 'black'
+  };
+
   return (
-    <div className={`flex flex-col fixed top-0 w-full h-40 z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'} ${isBlack ? 'bg-black text-white' : 'bg-white text-black'}`}>
+    <div style={{...commonStyles, transition: 'transform 0.3s', transform: isVisible ? 'translateY(0)' : 'translateY(-100%)'}} className="flex flex-col fixed top-0 w-full h-40 z-50">
       <div className="flex justify-between items-center px-5 w-full mx-auto">
         <div className="flex ml-10">
           <img
@@ -88,7 +93,7 @@ const Header: React.FC = () => {
                 <p>{t('Tech')}</p>
               </button>
               {techDropdownOpen && (
-                <div className="absolute mt-2 w-48 bg-white text-black border rounded shadow-lg z-10">
+                <div style={commonStyles} className="absolute mt-2 w-48 bg-white text-black border rounded shadow-lg z-10">
                   <ul>
                     <li>
                       <Link
@@ -132,25 +137,25 @@ const Header: React.FC = () => {
                 {getLanguageLabel()}
               </button>
               {LangDropdownOpen && (
-                <div className="absolute right-0 mt-2 w-48 bg-white text-black border rounded shadow-lg z-10">
+                <div style={commonStyles} className="absolute right-0 mt-2 w-48 bg-white text-black border rounded shadow-lg z-10">
                   <ul>
                     <li
                       className="p-2 hover:bg-gray-200 cursor-pointer"
                       onClick={() => toggleLanguage('en')}
                     >
-                      <p>English</p>
+                      English
                     </li>
                     <li
                       className="p-2 hover:bg-gray-200 cursor-pointer"
                       onClick={() => toggleLanguage('zh_tw')}
                     >
-                      <p>繁體中文</p>
+                      繁體中文
                     </li>
                     <li
                       className="p-2 hover:bg-gray-200 cursor-pointer"
                       onClick={() => toggleLanguage('zh_cn')}
                     >
-                      <p>簡體中文</p>
+                      簡體中文
                     </li>
                   </ul>
                 </div>
@@ -161,7 +166,7 @@ const Header: React.FC = () => {
                 onClick={toggleColor}
                 className="hover:text-gray-700 cursor-pointer"
               >
-                {isBlack ? 'Light Mode' : 'Dark Mode'}
+                {isBlack ? t('Light Mode') : t('Dark Mode')}
               </button>
             </li>
           </ul>

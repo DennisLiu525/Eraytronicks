@@ -1,4 +1,8 @@
 {
-    "Home":"Home",
-    "About":"About"
+    "Home": "首页",
+    "About": "关于",
+    "Tech": "技术",
+    "News": "新闻",
+    "Light Mode":"日间模式",
+    "Dark Mode":"夜间模式"
 }
