@@ -7,4 +7,5 @@ export default defineConfig({
   server: {
     port: 8080, // 你想要更改的端口
   },
+  base:'/Eraytronicks/'
 })
