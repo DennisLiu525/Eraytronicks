@@ -187,15 +187,15 @@ const AVAXOTP: React.FC = () => {
     const fontStyles = getFontStyles(i18n.language);
     return (
         <div id="AVAXOTP" className="pt-3 scroll-mt-32 h-[100vh] flex flex-col rounded-[51px] items-center" style={commonStyles}>
-            <h1 className={`${fontStyles.slogan} font-bold`}>
+            <h1 className={`${fontStyles.slogan} font-bold h-[10%]`}>
                 {t('AVAXOTP')}
             </h1>
             <div className="w-full h-2 border border-violet-700 bg-violet-700"></div> {/* 標題下的最粗，高度設置為 4 */}
-            <p className={`${fontStyles.subtitle} mt-5 text-center max-md:max-w-full`}>
+            <p className={`${fontStyles.body} mt-5 text-center max-md:max-w-full`}>
                 {t('AVAXOTP是一種創新的OTP解決方案。它具有低成本、低操作電壓、卓越的可靠性、非揮發性、編程堅固性和不可追蹤性，非常適合用於高度機密的信息、硬體資安、物聯網、汽車電子以及LCD/LED參數修整應用。')}
             </p>
-            <div className="flex flex-col items-center px-7 w-full max-md:px-5">
-                <div className="mt-8 w-full flex max-md:flex-col">
+            <div className="h-[60%] flex flex-col items-center px-7 w-full max-md:px-5">
+                <div className="mt-5 w-full flex max-md:flex-col">
                     {/* 左邊容器 */}
                     <div className="w-1/3 flex flex-col max-md:w-full">
                         <div className={`${fontStyles.subtitle} flex flex-col items-center mt-9 mb-3 font-bold text-center whitespace-nowrap`}>
@@ -223,7 +223,7 @@ const AVAXOTP: React.FC = () => {
                     </div>
                     {/* 右邊容器 */}
                     <div className="w-1/3 flex flex-col items-center max-md:w-full">
-                        <div className={`${fontStyles.subtitle} mb-3 mt-9 flex flex-col items-center font-bold text-center`}>
+                        <div className={`${fontStyles.subtitle} mb-3 mt-5 flex flex-col items-center font-bold text-center`}>
                             {t('低成本')}
                         </div>
                         <div className="w-full h-1 border border-violet-700 bg-violet-700"></div> {/* 容器內的最細，高度設置為 1 */}
@@ -244,10 +244,10 @@ const AVAXOTP: React.FC = () => {
                     {t('不可追蹤性')}
                 </p>
             </div>
-            <h2 className={`${fontStyles.subslogan} mt-10 font-bold text-teal-300 text-opacity-80 max-md:mt-10 max-md:text-4xl ${isBlack ? ' text-teal-300':'text-teal-900'}`}>
+            <h2 className={`${fontStyles.subtitle} mt-3 font-bold text-teal-300 text-opacity-80 max-md:mt-10 max-md:text-4xl ${isBlack ? ' text-teal-300':'text-teal-900'}`}>
                 {t('專為資安和物聯網設計 具備可擴展性及穩定性的單元')}
             </h2>
-            <p className={`${fontStyles.body} mt-3 text-center max-md:text-2xl`}>
+            <p className={`${fontStyles.body} h-[20%] mt-2 text-center max-md:text-2xl`}>
                 {t('AVAXOTP單元由兩個串聯的邏輯晶體體組成，具有小尺寸、低成本和低操作電壓等特點。AVAXOTP可以持續微縮，為未來先進技術和相關產品提供了絕佳的發展空間。較低的編程電壓減少了芯片內部充電泵電路的設計工作，降低了現場編程的難度。優異的可靠性、非揮發性、編程堅固性和不可追蹤特性，適用於高安全性、物聯網、汽車電子以及LCD/LED參數修整應用等。')}
             </p>
         </div>
