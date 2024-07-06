@@ -29,7 +29,6 @@ const fontStylesMapping:Record<string,FontStyles> = {
 
 const Intro: React.FC = () => {
     const { t, i18n } = useTranslation();
-    const { isBlack } = useColor();
 
     // const commonStyles = {
     //     backgroundColor: isBlack ? 'black' : 'white',
