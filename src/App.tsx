@@ -9,6 +9,9 @@ import Header from './components/Header';
 import WebsiteComponents from "./components/Website";
 import { useColor } from './context/ColorContext';
 import FormPage from './components/Form';
+import i18n from './i18n.ts'
+import { I18nextProvider } from 'react-i18next'
+import { ColorProvider } from './context/ColorContext.tsx';
 
 const {
   Intro: Intro,
@@ -19,34 +22,30 @@ const {
 } = WebsiteComponents;
 
 const App: React.FC = () => {
-  const { isBlack } = useColor(); // 使用新的 ColorContext
-
-  const commonStyles = {
-    backgroundColor: isBlack ? 'black' : 'white',
-    color: isBlack ? 'white' : 'black'
-  };
 
   return (
-    <Router>
-      <div style={commonStyles}>
-        <Header />
-        <Routes>
-          <Route path="/Eraytronicks/form" element={<FormPage />} />
-          <Route path="/Eraytronicks" element={
-            <div>
-              <Intro />
-              <About />
-              <Cache />
-              <AVAXOTP />
-              <Footer />
-              <div className="p-4">
-                <Link to="/Eraytronicks/form" className="text-blue-500 hover:underline">Go to Form</Link>
+    <I18nextProvider i18n={i18n}>
+      <ColorProvider>
+        <Router>
+          <Header />
+          <Routes>
+            <Route path="/Eraytronicks/form" element={<FormPage />} />
+            <Route path="/Eraytronicks" element={
+              <div>
+                <Intro />
+                <About />
+                <Cache />
+                <AVAXOTP />
+                <Footer />
+                <div className="p-4">
+                  <Link to="/Eraytronicks/form" className="text-blue-500 hover:underline">Go to Form</Link>
+                </div>
               </div>
-            </div>
-          } />
-        </Routes>
-      </div>
-    </Router>
+            } />
+          </Routes>
+        </Router>
+      </ColorProvider>
+    </I18nextProvider >
   );
 }
 
