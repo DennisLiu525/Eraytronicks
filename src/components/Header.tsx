@@ -52,133 +52,156 @@ const Header: React.FC = () => {
 
   return (
     <div>
-      <div className="justify-between flex flex-col fixed top-0 w-full max-h-[15vh] z-50 overflow-hidden" style={{ ...commonStyles, transition: 'transform 0.3s', transform: isVisible ? 'translateY(0)' : 'translateY(-100%)' }}>
-        <nav className="flex flex-row justify-between max-h-[15vh]">
-          <div className="w-[40%] flex flex-row">
+      <div className="fixed top-0 w-full max-h-[15vh] z-50" style={{ ...commonStyles, transition: 'transform 0.3s', transform: isVisible ? 'translateY(0)' : 'translateY(-100%)' }}>
+        <nav className="flex max-h-[15vh] justify-between">
+          <div className="w-[40%] sm:w-[40%] flex flex-row">
             <img
               loading="lazy"
               srcSet="./images/Logo.png"
               alt="Logo"
-              className='h-auto aspect-square'
+              className='h-auto aspect-square w-[30%]'
             />
             <img
               loading="lazy"
               srcSet="./images/LogoWord.png"
-              className="align-bottom translate-y-[4vh]"
+              className="w-[60%] translate-y-[30%] object-top"
               alt="Logo Word"
             />
           </div>
-          <button className="sm:hidden" onClick={toggleMobileMenu}>
-            <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-            </svg>
-          </button>
-          <ul className="hidden sm:flex flex-row items-center justify-end w-[60%] pr-[2vh] gap-3 sm:gap-6 lg:gap-10 xl:gap-12 2xl:gap-14">
-            <li>
-              <Link
-                to="Home"
-                smooth={true}
-                duration={500}
-                className="hover:text-gray-700 cursor-pointer"
-              >
-                <p>{t('Home')}</p>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="About"
-                smooth={true}
-                duration={500}
-                className="hover:text-gray-700 cursor-pointer"
-              >
-                <p>{t('About')}</p>
-              </Link>
-            </li>
-            <li className="relative">
-              <button
-                onClick={toggleTechDropdown}
-                className="hover:text-gray-700 cursor-pointer"
-              >
-                <p>{t('Tech')}</p>
-              </button>
-              {techDropdownOpen && (
-                <div style={commonStyles} className="absolute mt-2 w-48 bg-white text-black border rounded shadow-lg z-10">
-                  <ul>
-                    <li>
-                      <Link
-                        to="Cache$RAM"
-                        smooth={true}
-                        duration={500}
-                        className="p-2 hover:bg-gray-200 cursor-pointer block"
+          <div className='flex justify-center'>
+            <button className="sm:hidden left-0" onClick={toggleMobileMenu}>
+              <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+            </button>
+          </div>
+          <div className='sm:w-[60%]'>
+            <ul className="hidden sm:flex gap-3 my-[10%]">
+              <li>
+                <Link
+                  to="Home"
+                  smooth={true}
+                  duration={500}
+                  className="hover:text-gray-700 cursor-pointer"
+                >
+                  <p>{t('Home')}</p>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="About"
+                  smooth={true}
+                  duration={500}
+                  className="hover:text-gray-700 cursor-pointer"
+                >
+                  <p>{t('About')}</p>
+                </Link>
+              </li>
+              <li className="relative">
+                <button
+                  onClick={() => {
+                    toggleTechDropdown()
+                  }}
+                  className="hover:text-gray-700 cursor-pointer"
+                >
+                  <p>{t('Tech')}</p>
+                </button>
+                {techDropdownOpen && (
+                  <div style={commonStyles} className="absolute mt-2 w-48 bg-white text-black border rounded shadow-lg z-10">
+                    <ul>
+                      <li>
+                        <Link
+                          to="Cache$RAM"
+                          smooth={true}
+                          duration={500}
+                          className="p-2 hover:bg-gray-200 cursor-pointer block"
+                          onClick={() => {
+                            toggleTechDropdown()
+                          }}
+                        >
+                          <p>Cache$RAM</p>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="AVAXOTP"
+                          smooth={true}
+                          duration={500}
+                          className="p-2 hover:bg-gray-200 cursor-pointer block"
+                          onClick={() => {
+                            toggleTechDropdown()
+                          }}
+                        >
+                          <p>AVAXOTP</p>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </li>
+              <li className='relative'>
+                <Link
+                  to='News'
+                  smooth={true}
+                  duration={500}
+                  className="hover:text-gray-700 cursor-pointer"
+                >
+                  <p>{t('News')}</p>
+                </Link>
+              </li>
+              <li className="relative">
+                <button
+                  onClick={() => {
+                    toggleLangDropdown()
+                  }}
+                  className="hover:text-gray-700 cursor-pointer"
+                >
+                  {getLanguageLabel()}
+                </button>
+                {LangDropdownOpen && (
+                  <div style={commonStyles} className="absolute right-0 mt-2 w-48 bg-white text-black border rounded shadow-lg z-10">
+                    <ul>
+                      <li
+                        className="p-2 hover:bg-gray-200 cursor-pointer"
+                        onClick={() => {
+                          toggleLanguage('en')
+                          toggleLangDropdown()
+                        }}
                       >
-                        <p>Cache$RAM</p>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="AVAXOTP"
-                        smooth={true}
-                        duration={500}
-                        className="p-2 hover:bg-gray-200 cursor-pointer block"
+                        English
+                      </li>
+                      <li
+                        className="p-2 hover:bg-gray-200 cursor-pointer"
+                        onClick={() => {
+                          toggleLanguage('zh_tw')
+                          toggleLangDropdown()
+                        }}
                       >
-                        <p>AVAXOTP</p>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li>
-            <li className='relative'>
-              <Link
-                to='News'
-                smooth={true}
-                duration={500}
-                className="hover:text-gray-700 cursor-pointer"
-              >
-                <p>{t('News')}</p>
-              </Link>
-            </li>
-            <li className="relative">
-              <button
-                onClick={toggleLangDropdown}
-                className="hover:text-gray-700 cursor-pointer"
-              >
-                {getLanguageLabel()}
-              </button>
-              {LangDropdownOpen && (
-                <div style={commonStyles} className="absolute right-0 mt-2 w-48 bg-white text-black border rounded shadow-lg z-10">
-                  <ul>
-                    <li
-                      className="p-2 hover:bg-gray-200 cursor-pointer"
-                      onClick={() => toggleLanguage('en')}
-                    >
-                      English
-                    </li>
-                    <li
-                      className="p-2 hover:bg-gray-200 cursor-pointer"
-                      onClick={() => toggleLanguage('zh_tw')}
-                    >
-                      繁體中文
-                    </li>
-                    <li
-                      className="p-2 hover:bg-gray-200 cursor-pointer"
-                      onClick={() => toggleLanguage('zh_cn')}
-                    >
-                      簡體中文
-                    </li>
-                  </ul>
-                </div>
-              )}
-            </li>
-            <li>
-              <button
-                onClick={toggleColor}
-                className="hover:text-gray-700 cursor-pointer"
-              >
-                {isBlack ? t('Light Mode') : t('Dark Mode')}
-              </button>
-            </li>
-          </ul>
+                        繁體中文
+                      </li>
+                      <li
+                        className="p-2 hover:bg-gray-200 cursor-pointer"
+                        onClick={() => {
+                          toggleLanguage('zh_cn')
+                          toggleLangDropdown()
+                        }}
+                      >
+                        簡體中文
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </li>
+              <li>
+                <button
+                  onClick={toggleColor}
+                  className="hover:text-gray-700 cursor-pointer"
+                >
+                  {isBlack ? t('Light Mode') : t('Dark Mode')}
+                </button>
+              </li>
+            </ul>
+          </div>
         </nav>
       </div>
       {mobileMenuOpen && (
@@ -188,116 +211,131 @@ const Header: React.FC = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
-          <ul className="flex flex-col items-center gap-6">
-            <li>
-              <Link
-                to="Home"
-                smooth={true}
-                duration={500}
-                className="hover:text-gray-300 cursor-pointer"
-                onClick={toggleMobileMenu}
-              >
-                <p>{t('Home')}</p>
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="About"
-                smooth={true}
-                duration={500}
-                className="hover:text-gray-300 cursor-pointer"
-                onClick={toggleMobileMenu}
-              >
-                <p>{t('About')}</p>
-              </Link>
-            </li>
-            <li className="relative">
-              <button
-                onClick={toggleTechDropdown}
-                className="hover:text-gray-300 cursor-pointer w-full"
-              >
-                <p>{t('Tech')}</p>
-              </button>
-              {techDropdownOpen && (
-                <ul className="left-0 mt-2 flex flex-col items-center gap-2 bg-black bg-opacity-75 w-full">
-                  <li>
-                    <Link
-                      to="Cache$RAM"
-                      smooth={true}
-                      duration={500}
-                      className="hover:text-gray-300 cursor-pointer"
-                      onClick={toggleMobileMenu}
-                    >
-                      <p>Cache$RAM</p>
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="AVAXOTP"
-                      smooth={true}
-                      duration={500}
-                      className="hover:text-gray-300 cursor-pointer"
-                      onClick={toggleMobileMenu}
-                    >
-                      <p>AVAXOTP</p>
-                    </Link>
-                  </li>
-                </ul>
-              )}
-            </li>
-            <li className="relative">
-              <button
-                onClick={toggleLangDropdown}
-                className="hover:text-gray-300 cursor-pointer w-full"
-              >
-                {getLanguageLabel()}
-              </button>
-              {LangDropdownOpen && (
-                <ul className="left-0 mt-2 flex flex-col items-center gap-2 bg-black bg-opacity-75 w-full">
-                  <li
-                    className="hover:text-gray-300 cursor-pointer"
-                    onClick={() => { toggleLanguage('en'); toggleMobileMenu(); }}
-                  >
-                    English
-                  </li>
-                  <li
-                    className="hover:text-gray-300 cursor-pointer"
-                    onClick={() => { toggleLanguage('zh_tw'); toggleMobileMenu(); }}
-                  >
-                    繁體中文
-                  </li>
-                  <li
-                    className="hover:text-gray-300 cursor-pointer"
-                    onClick={() => { toggleLanguage('zh_cn'); toggleMobileMenu(); }}
-                  >
-                    簡體中文
-                  </li>
-                </ul>
-              )}
-            </li>
-            <li>
-              <Link
-                to='News'
-                smooth={true}
-                duration={500}
-                className="hover:text-gray-300 cursor-pointer"
-                onClick={toggleMobileMenu}
-              >
-                <p>{t('News')}</p>
-              </Link>
-            </li>
-            <li>
-              <button
-                onClick={toggleColor}
-                className="hover:text-gray-300 cursor-pointer"
-              >
-                {isBlack ? t('Light Mode') : t('Dark Mode')}
-              </button>
-            </li>
-          </ul>
+          <div className=' mr-[30%]'>
+            <ul className="flex flex-col items-center gap-6">
+              <li>
+                <Link
+                  to="Home"
+                  smooth={true}
+                  duration={500}
+                  className="hover:text-gray-300 cursor-pointer"
+                  onClick={toggleMobileMenu}
+                >
+                  <p>{t('Home')}</p>
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="About"
+                  smooth={true}
+                  duration={500}
+                  className="hover:text-gray-300 cursor-pointer"
+                  onClick={toggleMobileMenu}
+                >
+                  <p>{t('About')}</p>
+                </Link>
+              </li>
+              <li className="relative">
+                <button
+                  onClick={toggleTechDropdown}
+                  className="hover:text-gray-300 cursor-pointer w-full"
+                >
+                  <p>{t('Tech')}</p>
+                </button>
+                {techDropdownOpen && (
+                  <div>
+                    <div className='border border-white'></div>
+                    <ul className="left-0 mt-2 flex flex-col items-center gap-2 bg-black bg-opacity-75 w-full">
+                      <li>
+                        <Link
+                          to="Cache$RAM"
+                          smooth={true}
+                          duration={500}
+                          className="hover:text-gray-300 cursor-pointer"
+                          onClick={() => {
+                            toggleMobileMenu();
+                            toggleTechDropdown();
+                          }}
+                        >
+                          <p>Cache$RAM</p>
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to="AVAXOTP"
+                          smooth={true}
+                          duration={500}
+                          className="hover:text-gray-300 cursor-pointer"
+                          onClick={() => {
+                            toggleMobileMenu();
+                            toggleTechDropdown();
+                          }}
+                        >
+                          <p>AVAXOTP</p>
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </li>
+              <li className="relative">
+                <button
+                  onClick={toggleLangDropdown}
+                  className="hover:text-gray-300 cursor-pointer w-full"
+                >
+                  {getLanguageLabel()}
+                </button>
+                {LangDropdownOpen && (
+                  <div>
+                    <div className='border border-white'></div>
+                    <ul className="left-0 mt-2 flex flex-col items-center gap-2 bg-black bg-opacity-75 w-full">
+                      <li
+                        className="hover:text-gray-300 cursor-pointer"
+                        onClick={() => { toggleLanguage('en'); toggleMobileMenu(); }}
+                      >
+                        English
+                      </li>
+                      <li
+                        className="hover:text-gray-300 cursor-pointer"
+                        onClick={() => { toggleLanguage('zh_tw'); toggleMobileMenu(); }}
+                      >
+                        繁體中文
+                      </li>
+                      <li
+                        className="hover:text-gray-300 cursor-pointer"
+                        onClick={() => { toggleLanguage('zh_cn'); toggleMobileMenu(); }}
+                      >
+                        簡體中文
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </li>
+              <li>
+                <Link
+                  to='News'
+                  smooth={true}
+                  duration={500}
+                  className="hover:text-gray-300 cursor-pointer"
+                  onClick={toggleMobileMenu}
+                >
+                  <p>{t('News')}</p>
+                </Link>
+              </li>
+              <li>
+                <button
+                  onClick={toggleColor}
+                  className="hover:text-gray-300 cursor-pointer"
+                >
+                  {isBlack ? t('Light Mode') : t('Dark Mode')}
+                </button>
+              </li>
+            </ul>
+          </div>
         </div>
-      )}
-    </div>
+      )
+      }
+    </div >
   );
 };
 
