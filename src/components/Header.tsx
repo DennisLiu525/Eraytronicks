@@ -54,17 +54,17 @@ const Header: React.FC = () => {
     <div>
       <div className="justify-between flex flex-col fixed top-0 w-full max-h-[15vh] z-50 overflow-hidden" style={{ ...commonStyles, transition: 'transform 0.3s', transform: isVisible ? 'translateY(0)' : 'translateY(-100%)' }}>
         <nav className="flex flex-row justify-between max-h-[15vh]">
-          <div className="w-[40%] flex flex-row justify-between">
+          <div className="w-[40%] flex flex-row">
             <img
               loading="lazy"
               srcSet="./images/Logo.png"
               alt="Logo"
-              className='w-[40%] h-auto'
+              className='h-auto aspect-square'
             />
             <img
               loading="lazy"
               srcSet="./images/LogoWord.png"
-              className="w-[60%] translate-y-[2vh] md:translate-y-[3vh] lg:translate-y-[4vh] xl:translate-y-[4vh] align-bottom"
+              className="align-bottom translate-y-[4vh]"
               alt="Logo Word"
             />
           </div>
@@ -211,38 +211,68 @@ const Header: React.FC = () => {
                 <p>{t('About')}</p>
               </Link>
             </li>
-            <li>
+            <li className="relative">
               <button
-                onClick={() => { toggleTechDropdown(); setMobileMenuOpen(false); }}
-                className="hover:text-gray-300 cursor-pointer"
+                onClick={toggleTechDropdown}
+                className="hover:text-gray-300 cursor-pointer w-full"
               >
                 <p>{t('Tech')}</p>
               </button>
               {techDropdownOpen && (
-                <div style={commonStyles} className="absolute mt-2 w-48 bg-white text-black border rounded shadow-lg z-10">
-                  <ul>
-                    <li>
-                      <Link
-                        to="Cache$RAM"
-                        smooth={true}
-                        duration={500}
-                        className="p-2 hover:bg-gray-200 cursor-pointer block"
-                      >
-                        <p>Cache$RAM</p>
-                      </Link>
-                    </li>
-                    <li>
-                      <Link
-                        to="AVAXOTP"
-                        smooth={true}
-                        duration={500}
-                        className="p-2 hover:bg-gray-200 cursor-pointer block"
-                      >
-                        <p>AVAXOTP</p>
-                      </Link>
-                    </li>
-                  </ul>
-                </div>
+                <ul className="left-0 mt-2 flex flex-col items-center gap-2 bg-black bg-opacity-75 w-full">
+                  <li>
+                    <Link
+                      to="Cache$RAM"
+                      smooth={true}
+                      duration={500}
+                      className="hover:text-gray-300 cursor-pointer"
+                      onClick={toggleMobileMenu}
+                    >
+                      <p>Cache$RAM</p>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="AVAXOTP"
+                      smooth={true}
+                      duration={500}
+                      className="hover:text-gray-300 cursor-pointer"
+                      onClick={toggleMobileMenu}
+                    >
+                      <p>AVAXOTP</p>
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+            <li className="relative">
+              <button
+                onClick={toggleLangDropdown}
+                className="hover:text-gray-300 cursor-pointer w-full"
+              >
+                {getLanguageLabel()}
+              </button>
+              {LangDropdownOpen && (
+                <ul className="left-0 mt-2 flex flex-col items-center gap-2 bg-black bg-opacity-75 w-full">
+                  <li
+                    className="hover:text-gray-300 cursor-pointer"
+                    onClick={() => { toggleLanguage('en'); toggleMobileMenu(); }}
+                  >
+                    English
+                  </li>
+                  <li
+                    className="hover:text-gray-300 cursor-pointer"
+                    onClick={() => { toggleLanguage('zh_tw'); toggleMobileMenu(); }}
+                  >
+                    繁體中文
+                  </li>
+                  <li
+                    className="hover:text-gray-300 cursor-pointer"
+                    onClick={() => { toggleLanguage('zh_cn'); toggleMobileMenu(); }}
+                  >
+                    簡體中文
+                  </li>
+                </ul>
               )}
             </li>
             <li>
@@ -255,38 +285,6 @@ const Header: React.FC = () => {
               >
                 <p>{t('News')}</p>
               </Link>
-            </li>
-            <li className="relative">
-              <button
-                onClick={() => { toggleLangDropdown(); setMobileMenuOpen(false); }}
-                className="hover:text-gray-300 cursor-pointer"
-              >
-                {getLanguageLabel()}
-              </button>
-              {LangDropdownOpen && (
-                <div style={commonStyles} className="absolute right-0 mt-2 w-48 bg-white text-black border rounded shadow-lg z-10">
-                  <ul>
-                    <li
-                      className="p-2 hover:bg-gray-200 cursor-pointer"
-                      onClick={() => toggleLanguage('en')}
-                    >
-                      English
-                    </li>
-                    <li
-                      className="p-2 hover:bg-gray-200 cursor-pointer"
-                      onClick={() => toggleLanguage('zh_tw')}
-                    >
-                      繁體中文
-                    </li>
-                    <li
-                      className="p-2 hover:bg-gray-200 cursor-pointer"
-                      onClick={() => toggleLanguage('zh_cn')}
-                    >
-                      簡體中文
-                    </li>
-                  </ul>
-                </div>
-              )}
             </li>
             <li>
               <button
