@@ -53,7 +53,7 @@ const Header: React.FC = () => {
   return (
     <div>
       <div className="fixed top-0 w-full max-h-[15vh] z-50" style={{ ...commonStyles, transition: 'transform 0.3s', transform: isVisible ? 'translateY(0)' : 'translateY(-100%)' }}>
-        <nav className="flex max-h-[15vh] justify-between">
+        <nav className="flex max-h-[15vh]">
           <div className="w-[40%] sm:w-[40%] flex flex-row">
             <img
               loading="lazy"
@@ -68,16 +68,16 @@ const Header: React.FC = () => {
               alt="Logo Word"
             />
           </div>
-          <div className='flex justify-center'>
-            <button className="sm:hidden left-0" onClick={toggleMobileMenu}>
+          <div className='flex ml-auto'>
+            <button className="sm:hidden" onClick={toggleMobileMenu}>
               <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
               </svg>
             </button>
           </div>
-          <div className='sm:w-[60%]'>
-            <ul className="hidden sm:flex gap-3 my-[10%]">
-              <li>
+          <div className='sm:w-fit my-auto'>
+            <div className="hidden sm:flex gap-4 md:gap-6 lg:gap-8 ml-auto">
+              <div>
                 <Link
                   to="Home"
                   smooth={true}
@@ -86,8 +86,8 @@ const Header: React.FC = () => {
                 >
                   <p>{t('Home')}</p>
                 </Link>
-              </li>
-              <li>
+              </div>
+              <div>
                 <Link
                   to="About"
                   smooth={true}
@@ -96,8 +96,8 @@ const Header: React.FC = () => {
                 >
                   <p>{t('About')}</p>
                 </Link>
-              </li>
-              <li className="relative">
+              </div>
+              <div className="relative">
                 <button
                   onClick={() => {
                     toggleTechDropdown()
@@ -138,8 +138,8 @@ const Header: React.FC = () => {
                     </ul>
                   </div>
                 )}
-              </li>
-              <li className='relative'>
+              </div>
+              <div className='relative'>
                 <Link
                   to='News'
                   smooth={true}
@@ -148,8 +148,8 @@ const Header: React.FC = () => {
                 >
                   <p>{t('News')}</p>
                 </Link>
-              </li>
-              <li className="relative">
+              </div>
+              <div className="relative">
                 <button
                   onClick={() => {
                     toggleLangDropdown()
@@ -191,16 +191,16 @@ const Header: React.FC = () => {
                     </ul>
                   </div>
                 )}
-              </li>
-              <li>
+              </div>
+              <div>
                 <button
                   onClick={toggleColor}
                   className="hover:text-gray-700 cursor-pointer"
                 >
                   {isBlack ? t('Light Mode') : t('Dark Mode')}
                 </button>
-              </li>
-            </ul>
+              </div>
+            </div>
           </div>
         </nav>
       </div>
