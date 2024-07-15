@@ -9,29 +9,56 @@ type FontStyles = {
   body: string;
 };
 
-const fontStylesMapping: Record<string, FontStyles> = {
+const fontStylesMapping: Record<string, { mobile: FontStyles; desktop: FontStyles }> = {
   en: {
-    slogan: 'text-5xl',
-    subslogan: 'text-4xl',
-    title: 'text-3xl',
-    subtitle: 'text-2xl',
-    body: 'text-1xl'
+    mobile: {
+      slogan: 'text-3xl',
+      subslogan: 'text-2xl',
+      title: 'text-xl',
+      subtitle: 'text-lg',
+      body: 'text-base',
+    },
+    desktop: {
+      slogan: 'text-5xl',
+      subslogan: 'text-4xl',
+      title: 'text-3xl',
+      subtitle: 'text-2xl',
+      body: 'text-xl',
+    },
   },
   zh_tw: {
-    slogan: 'text-6xl',
-    subslogan: 'text-5xl',
-    title: 'text-4xl',
-    subtitle: 'text-3xl',
-    body: 'text-2xl'
+    mobile: {
+      slogan: 'text-4xl',
+      subslogan: 'text-3xl',
+      title: 'text-2xl',
+      subtitle: 'text-xl',
+      body: 'text-lg',
+    },
+    desktop: {
+      slogan: 'text-6xl',
+      subslogan: 'text-5xl',
+      title: 'text-4xl',
+      subtitle: 'text-3xl',
+      body: 'text-2xl',
+    },
   },
   zh_cn: {
-    slogan: 'text-6xl',
-    subslogan: 'text-5xl',
-    title: 'text-4xl',
-    subtitle: 'text-3xl',
-    body: 'text-2xl'
+    mobile: {
+      slogan: 'text-4xl',
+      subslogan: 'text-3xl',
+      title: 'text-2xl',
+      subtitle: 'text-xl',
+      body: 'text-lg',
+    },
+    desktop: {
+      slogan: 'text-6xl',
+      subslogan: 'text-5xl',
+      title: 'text-4xl',
+      subtitle: 'text-3xl',
+      body: 'text-2xl',
+    },
   },
-  // 添加其他语言和相应的字体大小
+  // Add other languages and respective font sizes
 };
 
 const getFontStyles = (language: string) => {
@@ -39,32 +66,31 @@ const getFontStyles = (language: string) => {
   return fontStylesMapping[language] || fontStylesMapping.en;
 };
 
-const Intro: React.FC = () => {
+const Intro = () => {
   const { t, i18n } = useTranslation();
-
-  // const commonStyles = {
-  //     backgroundColor: isBlack ? 'black' : 'white',
-  //     color: isBlack ? 'white' : 'black'
-  // };
   const fontStyles = getFontStyles(i18n.language);
+
   return (
-    <div id="Home" className="pt-32 scroll-mt-32 h-screen w-full flex overflow-hidden relative text-white flex-col justify-center items-start px-16 py-20 font-bold whitespace-nowrap min-h-[484px] md:px-5">
+    <div id="Home" className="scroll-mt-32 h-screen w-full relative overflow-hidden">
       <img
         loading="lazy"
         srcSet="./images/HomeBG.png"
-        className="object-cover absolute inset-0 size-full"
+        className="object-cover absolute top-0 left-0 w-full h-full"
+        alt="Background"
       />
-      <div className="flex relative flex-col mt-20 mb-20 ml-14 max-md:my-10 max-md:max-w-full">
-        <div className={`${fontStyles.slogan} max-md:max-w-full max-md:text-4xl`}>
-          {t('創新的記憶體解決方案')}
-        </div>
-        <div className={`${fontStyles.slogan} self-end mt-10 ml-72 max-md:mt-10`}>
-          {t('人工智慧運算、量子運算')}
+      <div className="relative flex flex-col text-white h-full justify-center items-center">
+        <div className="text-center w-full px-4 sm:px-0">
+          <div className={`sm:${fontStyles.desktop.slogan} ${fontStyles.mobile.slogan} break-words`}>
+            {t('創新的記憶體解決方案')}
+          </div>
+          <div className={`sm:${fontStyles.desktop.slogan} ${fontStyles.mobile.slogan} mt-5 break-words`}>
+            {t('人工智慧運算、量子運算')}
+          </div>
         </div>
       </div>
     </div>
   );
-}
+};
 
 const About: React.FC = () => {
   const { t, i18n } = useTranslation();

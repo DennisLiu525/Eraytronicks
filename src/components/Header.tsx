@@ -52,31 +52,31 @@ const Header: React.FC = () => {
 
   return (
     <div>
-      <div className="fixed top-0 w-full max-h-[15vh] z-50" style={{ ...commonStyles, transition: 'transform 0.3s', transform: isVisible ? 'translateY(0)' : 'translateY(-100%)' }}>
-        <nav className="flex max-h-[15vh]">
-          <div className="w-[40%] sm:w-[40%] flex flex-row">
+      <div className={`fixed top-0 w-full z-50 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`} style={commonStyles}>
+        <nav className="flex max-h-[10vh]">
+          <div className="flex flex-row max-w-[30%]">
             <img
               loading="lazy"
               srcSet="./images/Logo.png"
               alt="Logo"
-              className='h-auto aspect-square w-[30%]'
+              className='h-auto aspect-square'
             />
             <img
               loading="lazy"
               srcSet="./images/LogoWord.png"
-              className="w-[60%] translate-y-[30%] object-top"
+              className="translate-y-[30%]"
               alt="Logo Word"
             />
           </div>
-          <div className='flex ml-auto'>
+          <div className='flex w-full sm:hidden justify-end mr-[3%]'>
             <button className="sm:hidden" onClick={toggleMobileMenu}>
-              <svg className="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
               </svg>
             </button>
           </div>
-          <div className='sm:w-fit my-auto'>
-            <div className="hidden sm:flex gap-4 md:gap-6 lg:gap-8 ml-auto">
+          <div className='sm:w-full my-auto'>
+            <div className="hidden sm:flex gap-3 md:gap-4 lg:gap-8 justify-end mr-[5%]">
               <div>
                 <Link
                   to="Home"

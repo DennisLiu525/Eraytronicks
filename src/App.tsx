@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom';
 import Header from './components/Header';
 import WebsiteComponents from "./components/Website";
-import { useColor } from './context/ColorContext';
 import FormPage from './components/Form';
 import i18n from './i18n.ts'
 import { I18nextProvider } from 'react-i18next'
@@ -34,7 +33,7 @@ const App: React.FC = () => {
               <div>
                 <Intro />
                 <About />
-                <Cache />
+                <Cache /> 
                 <AVAXOTP />
                 <Footer />
                 <div className="p-4">
