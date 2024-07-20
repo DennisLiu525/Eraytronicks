@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useParams, useLocation, useNavigate, useMatch } from 'react-router-dom';
 import { Link } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 import useScrollVisibility from '../hooks/useScrollVisibility';
@@ -11,6 +12,8 @@ const Header: React.FC = () => {
   const [LangDropdownOpen, setDropdownOpen] = useState(false);
   const [techDropdownOpen, setTechDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const formMatch = useMatch(`/Eraytronicks/form`);
+  const navigate = useNavigate();
 
   const toggleLanguage = (lang: string) => {
     i18n.changeLanguage(lang).then(() => {
@@ -80,6 +83,11 @@ const Header: React.FC = () => {
               <div>
                 <Link
                   to="Home"
+                  onClick={()=>{
+                    if (formMatch){
+                      navigate("/Eraytronicks/")
+                    }
+                  }}
                   smooth={true}
                   duration={500}
                   className="hover:text-gray-700 cursor-pointer"

@@ -35,7 +35,7 @@ const App: React.FC = () => {
                 <About />
                 <Cache /> 
                 <AVAXOTP />
-                <Footer />
+                {/* <Footer /> */}
                 <div className="p-4">
                   <Link to="/Eraytronicks/form" className="text-blue-500 hover:underline">Go to Form</Link>
                 </div>
