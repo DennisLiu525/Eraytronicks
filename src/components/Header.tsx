@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { useParams, useLocation, useNavigate, useMatch } from 'react-router-dom';
-import { Link } from 'react-scroll';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useMatch } from 'react-router-dom';
+import { Link as ScrollLink, scroller } from 'react-scroll';
 import { useTranslation } from 'react-i18next';
 import useScrollVisibility from '../hooks/useScrollVisibility';
 import { useColor } from '../context/ColorContext';
@@ -12,7 +12,8 @@ const Header: React.FC = () => {
   const [LangDropdownOpen, setDropdownOpen] = useState(false);
   const [techDropdownOpen, setTechDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const formMatch = useMatch(`/Eraytronicks/form`);
+  const [scrollToId, setScrollToId] = useState<string | null>(null);
+  const formMatch = useMatch(`/Eraytronicks/Form`);
   const navigate = useNavigate();
 
   const toggleLanguage = (lang: string) => {
@@ -47,6 +48,30 @@ const Header: React.FC = () => {
         return 'EN_US';
     }
   };
+  
+  const handleNavigation = (to: string, formCheck: boolean, id?: string) => {
+    if (!!formMatch === formCheck) {
+      navigate(to);
+      if (id) {
+        setScrollToId(id);
+      }
+    } else if (id) {
+      scroller.scrollTo(id, {
+        smooth: true,
+        duration: 500,
+      });
+    }
+  };
+
+  useEffect(() => {
+    if (scrollToId) {
+      scroller.scrollTo(scrollToId, {
+        smooth: true,
+        duration: 500,
+      });
+      setScrollToId(null); // Reset scrollToId after scrolling
+    }
+  }, [scrollToId]);
 
   const commonStyles = {
     backgroundColor: isBlack ? 'black' : 'white',
@@ -81,34 +106,34 @@ const Header: React.FC = () => {
           <div className='sm:w-full my-auto'>
             <div className="hidden sm:flex gap-3 md:gap-4 lg:gap-8 justify-end mr-[5%]">
               <div>
-                <Link
-                  to="Home"
-                  onClick={()=>{
-                    if (formMatch){
-                      navigate("/Eraytronicks/")
-                    }
-                  }}
-                  smooth={true}
-                  duration={500}
+                <button
+                  onClick={() => handleNavigation("/Eraytronicks/", true, "Home")}
                   className="hover:text-gray-700 cursor-pointer"
                 >
                   <p>{t('Home')}</p>
-                </Link>
+                </button>
               </div>
               <div>
-                <Link
-                  to="About"
-                  smooth={true}
-                  duration={500}
+                <button
+                  onClick={() => handleNavigation("/Eraytronicks/", true, "About")}
                   className="hover:text-gray-700 cursor-pointer"
                 >
                   <p>{t('About')}</p>
-                </Link>
+                </button>
+              </div>
+              <div>
+                <button
+                  onClick={() => handleNavigation("/Eraytronicks/Form", false, "JoinUs")}
+                  className="hover:text-gray-700 cursor-pointer"
+                >
+                  <p>{t('JoinUs')}</p>
+                </button>
               </div>
               <div className="relative">
                 <button
                   onClick={() => {
-                    toggleTechDropdown()
+                    handleNavigation("/Eraytronicks/", true);
+                    toggleTechDropdown();
                   }}
                   className="hover:text-gray-700 cursor-pointer"
                 >
@@ -118,49 +143,44 @@ const Header: React.FC = () => {
                   <div style={commonStyles} className="absolute mt-2 w-48 bg-white text-black border rounded shadow-lg z-10">
                     <ul>
                       <li>
-                        <Link
-                          to="Cache$RAM"
-                          smooth={true}
-                          duration={500}
-                          className="p-2 hover:bg-gray-200 cursor-pointer block"
-                          onClick={() => {
-                            toggleTechDropdown()
+                        <button
+                          onClick={() =>{
+                            handleNavigation("/Eraytronicks/", true, "Cache$RAM")
+                            toggleTechDropdown();
                           }}
+                          className="p-2 hover:bg-gray-200 cursor-pointer block"
                         >
                           <p>Cache$RAM</p>
-                        </Link>
+                        </button>
                       </li>
                       <li>
-                        <Link
-                          to="AVAXOTP"
-                          smooth={true}
-                          duration={500}
-                          className="p-2 hover:bg-gray-200 cursor-pointer block"
-                          onClick={() => {
-                            toggleTechDropdown()
+                        <button
+                          onClick={() =>{
+                            handleNavigation("/Eraytronicks/", true, "AVAXOTP")
+                            toggleTechDropdown();
                           }}
+                          className="p-2 hover:bg-gray-200 cursor-pointer block"
                         >
                           <p>AVAXOTP</p>
-                        </Link>
+                        </button>
                       </li>
                     </ul>
                   </div>
                 )}
               </div>
               <div className='relative'>
-                <Link
-                  to='News'
-                  smooth={true}
-                  duration={500}
+                <button
+                  onClick={() => handleNavigation("/Eraytronicks/", true, "News")}
                   className="hover:text-gray-700 cursor-pointer"
                 >
                   <p>{t('News')}</p>
-                </Link>
+                </button>
               </div>
               <div className="relative">
                 <button
                   onClick={() => {
-                    toggleLangDropdown()
+                    handleNavigation("/Eraytronicks/", true);
+                    toggleLangDropdown();
                   }}
                   className="hover:text-gray-700 cursor-pointer"
                 >
@@ -172,8 +192,8 @@ const Header: React.FC = () => {
                       <li
                         className="p-2 hover:bg-gray-200 cursor-pointer"
                         onClick={() => {
-                          toggleLanguage('en')
-                          toggleLangDropdown()
+                          toggleLanguage('en');
+                          toggleLangDropdown();
                         }}
                       >
                         English
@@ -181,8 +201,8 @@ const Header: React.FC = () => {
                       <li
                         className="p-2 hover:bg-gray-200 cursor-pointer"
                         onClick={() => {
-                          toggleLanguage('zh_tw')
-                          toggleLangDropdown()
+                          toggleLanguage('zh_tw');
+                          toggleLangDropdown();
                         }}
                       >
                         繁體中文
@@ -190,8 +210,8 @@ const Header: React.FC = () => {
                       <li
                         className="p-2 hover:bg-gray-200 cursor-pointer"
                         onClick={() => {
-                          toggleLanguage('zh_cn')
-                          toggleLangDropdown()
+                          toggleLanguage('zh_cn');
+                          toggleLangDropdown();
                         }}
                       >
                         簡體中文
@@ -219,33 +239,47 @@ const Header: React.FC = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </button>
-          <div className=' mr-[30%]'>
+          <div className='mr-[30%]'>
             <ul className="flex flex-col items-center gap-6">
               <li>
-                <Link
-                  to="Home"
-                  smooth={true}
-                  duration={500}
+                <button
+                  onClick={() => {
+                    handleNavigation("/Eraytronicks/", true, "Home");
+                    toggleMobileMenu();
+                  }}
                   className="hover:text-gray-300 cursor-pointer"
-                  onClick={toggleMobileMenu}
                 >
                   <p>{t('Home')}</p>
-                </Link>
+                </button>
               </li>
               <li>
-                <Link
-                  to="About"
-                  smooth={true}
-                  duration={500}
+                <button
+                  onClick={() => {
+                    handleNavigation("/Eraytronicks/", true, "About");
+                    toggleMobileMenu();
+                  }}
                   className="hover:text-gray-300 cursor-pointer"
-                  onClick={toggleMobileMenu}
                 >
                   <p>{t('About')}</p>
-                </Link>
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => {
+                    handleNavigation("/Eraytronicks/Form", false, "JoinUs");
+                    toggleMobileMenu();
+                  }}
+                  className="hover:text-gray-300 cursor-pointer"
+                >
+                  <p>{t('JoinUs')}</p>
+                </button>
               </li>
               <li className="relative">
                 <button
-                  onClick={toggleTechDropdown}
+                  onClick={() => {
+                    handleNavigation("/Eraytronicks/", true);
+                    toggleTechDropdown();
+                  }}
                   className="hover:text-gray-300 cursor-pointer w-full"
                 >
                   <p>{t('Tech')}</p>
@@ -255,32 +289,28 @@ const Header: React.FC = () => {
                     <div className='border border-white'></div>
                     <ul className="left-0 mt-2 flex flex-col items-center gap-2 bg-black bg-opacity-75 w-full">
                       <li>
-                        <Link
-                          to="Cache$RAM"
-                          smooth={true}
-                          duration={500}
-                          className="hover:text-gray-300 cursor-pointer"
+                        <button
                           onClick={() => {
-                            toggleMobileMenu();
+                            handleNavigation("/Eraytronicks/", true, "Cache$RAM");
                             toggleTechDropdown();
+                            toggleMobileMenu();
                           }}
+                          className="hover:text-gray-300 cursor-pointer"
                         >
                           <p>Cache$RAM</p>
-                        </Link>
+                        </button>
                       </li>
                       <li>
-                        <Link
-                          to="AVAXOTP"
-                          smooth={true}
-                          duration={500}
-                          className="hover:text-gray-300 cursor-pointer"
+                        <button
                           onClick={() => {
-                            toggleMobileMenu();
+                            handleNavigation("/Eraytronicks/", true, "AVAXOTP");
                             toggleTechDropdown();
+                            toggleMobileMenu();
                           }}
+                          className="hover:text-gray-300 cursor-pointer"
                         >
                           <p>AVAXOTP</p>
-                        </Link>
+                        </button>
                       </li>
                     </ul>
                   </div>
@@ -320,17 +350,6 @@ const Header: React.FC = () => {
                 )}
               </li>
               <li>
-                <Link
-                  to='News'
-                  smooth={true}
-                  duration={500}
-                  className="hover:text-gray-300 cursor-pointer"
-                  onClick={toggleMobileMenu}
-                >
-                  <p>{t('News')}</p>
-                </Link>
-              </li>
-              <li>
                 <button
                   onClick={toggleColor}
                   className="hover:text-gray-300 cursor-pointer"
@@ -341,9 +360,8 @@ const Header: React.FC = () => {
             </ul>
           </div>
         </div>
-      )
-      }
-    </div >
+      )}
+    </div>
   );
 };
 

@@ -107,8 +107,8 @@ const About: React.FC = () => {
   const fontStyles = getFontStyles(i18n.language);
   return (
     <div id="About" style={commonStyles}>
-      <div className="pt-32 scroll-mt-32 h-[100vh] flex gap-5 max-md:flex-col max-md:gap-0 bg-opacity-95">
-        <div className="flex flex-col w-[66%] max-md:ml-0 max-md:w-full">
+      <div className="sm:pt-32 scroll-mt-32 h-[100vh] flex gap-5 max-md:flex-col max-md:gap-0 bg-opacity-95">
+        <div className="flex flex-col sm:w-[60%] w-full max-md:ml-0 max-md:w-full">
           <div className={`flex flex-col self-stretch px-20 py-16 my-auto w-full font-bold whitespace-nowrap rounded-[51px] max-md:px-5 max-md:mt-10 max-md:max-w-full ${isBlack ? 'bg-indigo-400 bg-opacity-20' : 'bg-sky-600 bg-opacity-20'}`}>
             <div className={`sm:${fontStyles.desktop.slogan} ${fontStyles.mobile.slogan} max-md:max-w-full max-md:text-4xl`}>
               {t('關於昱叡電子')}
@@ -118,7 +118,7 @@ const About: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex my-auto ml-5 w-[40%] max-md:ml-0 max-md:w-full">
+        <div className="flex my-auto ml-5 sm:w-[40%] w-full max-md:ml-0 max-md:w-full">
           <img
             loading="lazy"
             srcSet="./images/Chip.png"
@@ -142,7 +142,7 @@ const Cache: React.FC = () => {
   return (
     <div
       id="Cache$RAM"
-      className="pt-5 scroll-mt-32 h-[100vh] flex flex-col px-7 pb-8 rounded-[51px] max-md:px-5"
+      className="pt-5 scroll-mt-32 flex flex-col px-7 pb-8 max-md:px-5"
       style={commonStyles}
     >
       <div
@@ -159,7 +159,7 @@ const Cache: React.FC = () => {
         )}
       </div>
       <div className="mt-7 max-md:mt-2 max-md:max-w-full overflow-x-auto">
-        <div className="flex max-md:gap-0 min-w-[900px]">
+        <div className="flex max-md:gap-0 min-w-[900px] overflow-hidden">
           {/* left container */}
           <div className="flex flex-col w-full md:w-1/3 min-w-[300px]">
             <div
@@ -191,7 +191,7 @@ const Cache: React.FC = () => {
             </div>
           </div>
           {/* middle image */}
-          <div className="flex flex-col w-full md:w-1/3 min-w-[300px]">
+          <div className="flex flex-col w-full md:w-1/3 min-w-[300px] justify-center items-center my-auto">
             <img
               loading="lazy"
               srcSet="./images/Cache.png"
@@ -260,7 +260,7 @@ const AVAXOTP: React.FC = () => {
   };
   const fontStyles = getFontStyles(i18n.language);
   return (
-    <div id="AVAXOTP" className="pt-3 scroll-mt-32 h-auto flex flex-col rounded-[51px] items-center" style={commonStyles}>
+    <div id="AVAXOTP" className="pt-3 scroll-mt-32 h-auto flex flex-col items-center" style={commonStyles}>
       <h1 className={`sm:${fontStyles.desktop.slogan} ${fontStyles.mobile.slogan} font-bold h-auto text-center`}>
         {t('AVAXOTP')}
       </h1>
@@ -292,7 +292,7 @@ const AVAXOTP: React.FC = () => {
             <img
               loading="lazy"
               srcSet="./images/AV.png"
-              className="max-w-full h-[300px] max-md:mt-0"
+              className="my-auto max-w-full"
             />
             <div className='flex flex-col justify-center items-center mt-5'>
               <div className="w-[300px] h-2 bg-violet-700 my-4"></div>
@@ -330,35 +330,10 @@ const AVAXOTP: React.FC = () => {
   );
 };
 
-const Footer: React.FC = () => {
-  const { t } = useTranslation();
-  const { isBlack } = useColor();
-
-  const commonStyles = {
-    backgroundColor: isBlack ? 'black' : 'white',
-    color: isBlack ? 'white' : 'black'
-  };
-  // const fontStyles = getFontStyles(i18n.language);
-  return (
-    <div className="flex gap-5 items-start px-14 pt-16 pb-10 text-2xl font-bold max-md:flex-wrap max-md:px-5" style={commonStyles}>
-      <div className="flex-auto self-end mt-10">
-        Copyright © 2024 eraytroniks.com
-      </div>
-      <div className="flex flex-col self-start whitespace-nowrap max-md:max-w-full">
-        <div className="max-md:max-w-full">
-          {t('桃園辦公室：320317桃園市中壢區中大路300號')}
-        </div>
-        <div className="self-end mt-4">{t('產學營運中心229室')}</div>
-      </div>
-    </div>
-  );
-}
-
 const BlackChineseComponents = {
   Intro: Intro,
   About: About,
   Cache: Cache,
-  AVAXOTP: AVAXOTP,
-  Footer: Footer
+  AVAXOTP: AVAXOTP
 };
 export default BlackChineseComponents;

@@ -11,13 +11,13 @@ import FormPage from './components/Form';
 import i18n from './i18n.ts'
 import { I18nextProvider } from 'react-i18next'
 import { ColorProvider } from './context/ColorContext.tsx';
+import Footer from './components/Footer.tsx';
 
 const {
   Intro: Intro,
   About: About,
   Cache: Cache,
-  AVAXOTP: AVAXOTP,
-  Footer: Footer,
+  AVAXOTP: AVAXOTP
 } = WebsiteComponents;
 
 const App: React.FC = () => {
@@ -35,10 +35,7 @@ const App: React.FC = () => {
                 <About />
                 <Cache /> 
                 <AVAXOTP />
-                {/* <Footer /> */}
-                <div className="p-4">
-                  <Link to="/Eraytronicks/form" className="text-blue-500 hover:underline">Go to Form</Link>
-                </div>
+                <Footer />
               </div>
             } />
           </Routes>
