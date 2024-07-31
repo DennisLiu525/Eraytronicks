@@ -9,8 +9,8 @@ const FormPage: React.FC = () => {
     const formLabelFont = isBlack? 'text-white' : 'text-slate-700';
 
     return (
-        <div className={`mt-40 border-2 container mx-auto p-4 ${commonStyles}`}>
-            <h1 className="text-3xl font-bold mb-4">加入昱叡電子</h1>
+        <div className={`border-2 container mx-auto p-4 ${commonStyles}`}>
+            <h1 className="mt-[10%] text-3xl font-bold mb-4">加入昱叡電子</h1>
             <div className=' text-gray-500'>
                 <p>{t('您好，歡迎填寫履歷資料。')}</p>
                 <p className='flex'>{t('紅色')} <p className="text-red-500">*</p> {t('符號欄位為必填。另外，也請您將已準備好的履歷/自傳資料檔案上傳。')}</p>
