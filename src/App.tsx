@@ -5,13 +5,14 @@ import {
   Routes,
   Link
 } from 'react-router-dom';
-import Header from './components/Header';
-import WebsiteComponents from "./components/Website";
-import FormPage from './components/Form';
+import Header from './pages/Header.tsx';
+import WebsiteComponents from "./pages/Website.tsx";
+import FormPage from './pages/Form.tsx';
 import i18n from './i18n.ts'
 import { I18nextProvider } from 'react-i18next'
 import { ColorProvider } from './context/ColorContext.tsx';
-import Footer from './components/Footer.tsx';
+import Footer from './pages/Footer.tsx';
+import TimelinePage from './pages/Timeline.tsx';
 
 const {
   Intro: Intro,
@@ -33,6 +34,7 @@ const App: React.FC = () => {
               <div>
                 <Intro />
                 <About />
+                <TimelinePage/>
                 <Cache /> 
                 <AVAXOTP />
                 <Footer />

@@ -2,10 +2,38 @@
 @tailwind components;
 @tailwind utilities;
 
-
 html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark {
+  background-color: #1a202c;
+  color: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wrap {
+  position: relative;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+.border-2-2 {
+  border-width: 2px;
+}
+
+.border-gray-700 {
+  border-color: #d1d5db;
 }
