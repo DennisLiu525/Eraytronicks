@@ -316,6 +316,17 @@ const Header: React.FC = () => {
                   </div>
                 )}
               </li>
+              <li>
+                <button
+                  onClick={() => {
+                    handleNavigation("/Eraytronicks/", true, "News");
+                    toggleMobileMenu();
+                  }}
+                  className="hover:text-gray-300 cursor-pointer"
+                >
+                  <p>{t('News')}</p>
+                </button>
+              </li>
               <li className="relative">
                 <button
                   onClick={toggleLangDropdown}
