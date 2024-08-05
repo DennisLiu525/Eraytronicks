@@ -1,0 +1,27 @@
+[
+    {
+      "id": "1",
+      "title": "Breaking News: Market Hits Record High",
+      "description": "The stock market reached an all-time high today, driven by strong earnings reports and optimism about the economy.",
+      "url": "https://example.com/news1",
+      "imageUrl": "https://via.placeholder.com/150",
+      "publishedAt": "2023-07-20T14:00:00Z"
+    },
+    {
+      "id": "2",
+      "title": "Local News: Community Garden Flourishes",
+      "description": "The community garden in downtown has seen a surge in participation, with volunteers helping to grow fresh produce for local residents.",
+      "url": "https://example.com/news2",
+      "imageUrl": "https://via.placeholder.com/150",
+      "publishedAt": "2023-07-21T10:00:00Z"
+    },
+    {
+        "id": "2",
+        "title": "Local News: Community Garden Flourishes",
+        "description": "The community garden in downtown has seen a surge in participation, with volunteers helping to grow fresh produce for local residents.",
+        "url": "https://example.com/news2",
+        "imageUrl": "https://via.placeholder.com/150",
+        "publishedAt": "2023-07-21T10:00:00Z"
+      }
+  ]
+  
