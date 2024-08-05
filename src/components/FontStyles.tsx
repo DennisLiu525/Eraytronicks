@@ -48,12 +48,12 @@ const fontStylesMapping: Record<string, { mobile: FontStyles; desktop: FontStyle
   },
   zh_cn: {
     mobile: {
-      maxSlogan: 'text-4xl',
-      slogan: 'text-3xl',
-      subSlogan: 'text-2xl',
-      title: 'text-xl',
-      subtitle: 'text-lg',
-      body: 'text-base',
+      maxSlogan: 'text-3xl',
+      slogan: 'text-2xl',
+      subSlogan: 'text-xl',
+      title: 'text-lg',
+      subtitle: 'text-base',
+      body: 'text-sm',
     },
     desktop: {
       maxSlogan: 'text-7xl',
