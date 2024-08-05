@@ -4,9 +4,7 @@ import React from 'react';
 interface TimelineItem {
   date: string;
   title: string;
-  type: string;
-  units: string;
-  location: string;
+  description: string;
   imgUrl: string;
   link: string;
 }
@@ -48,15 +46,15 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
                   <div className="w-1 h-8 bg-gray-700"></div>
                 </div>
                 <div className="w-4/5 pl-8 flex-grow flex flex-col">
-                  {/* <a href={item.link} title={item.title}>
-                    <img src={item.imgUrl} alt={item.title} className="w-full h-auto mb-4 rounded-lg" />
-                  </a> */}
+                  {item.imgUrl && (
+                    <a href={item.link} title={item.title}>
+                      <img src={item.imgUrl} alt={item.title} className="w-full h-auto mb-4 rounded-lg" />
+                    </a>
+                  )}
                   <div className="flex-grow">
                     <h4 className="text-xl font-semibold mb-1">{item.title}</h4>
-                    <span className="text-gray-600">{item.date}</span>
-                    <h5 className="py-1">類型：{item.type}</h5>
-                    <h5>戶數：{item.units}</h5>
-                    <h5>座落地點：{item.location}</h5>
+                    <span className="mb-1">{item.date}</span>
+                    <p className="py-1">{item.description}</p>
                   </div>
                   <div className='h-8'></div>
                 </div>

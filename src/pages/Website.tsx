@@ -79,7 +79,7 @@ const Cache: React.FC = () => {
   return (
     <div
       id="Cache$RAM"
-      className="pt-5 scroll-mt-32 flex flex-col px-7 pb-8 max-md:px-5"
+      className="pt-5 scroll-mt-32 sm:h-screen flex flex-col px-7 pb-8 max-md:px-5"
       style={commonStyles}
     >
       <div
@@ -197,7 +197,7 @@ const AVAXOTP: React.FC = () => {
   };
   const fontStyles = getFontStyles(i18n.language);
   return (
-    <div id="AVAXOTP" className="pt-3 scroll-mt-32 h-auto flex flex-col items-center" style={commonStyles}>
+    <div id="AVAXOTP" className="pt-3 scroll-mt-32 h-auto sm:h-screen flex flex-col items-center" style={commonStyles}>
       <h1 className={`sm:${fontStyles.desktop.slogan} ${fontStyles.mobile.slogan} font-bold h-auto text-center`}>
         {t('AVAXOTP')}
       </h1>

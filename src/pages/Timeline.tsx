@@ -6,35 +6,36 @@ import { getFontStyles } from '../components/FontStyles';
 
 const timelineData = [
   {
-    date: '2023 / 03',
-    title: '博萃',
-    type: '集合式住宅',
-    units: '96戶',
-    location: '華山路40號',
-    imgUrl: '/archive/product/item/images/1686021028556.jpg',
-    link: 'https://www.ys-construction.com.tw/product/精選實績/公司個案/博萃?mode=year',
+    date: '2020 / 0X',
+    title: '公司成立',
+    description: '以下為說明文字',
+    imgUrl: '',
+    link: '',
   },
   {
-    date: '2022 / 12',
-    title: '晴萃',
-    type: '集合式住宅',
-    units: '140戶',
-    location: '高雄市楠梓區金和街73號',
-    imgUrl: '/archive/product/item/images/0800.jpg',
-    link: 'https://www.ys-construction.com.tw/product/精選實績/公司個案/晴萃?mode=year',
+    date: '2023 / 0X',
+    title: 'AVAXOTP 專利申請',
+    description: '以下為說明文字',
+    imgUrl: '',
+    link: '',
   },
   {
-    date: '2022 / 09',
-    title: '晴川',
-    type: '集合式住宅',
-    units: '140戶',
-    location: '高雄市楠梓區金和街197號',
-    imgUrl: '/archive/product/item/images/hp01.jpg',
-    link: 'https://www.ys-construction.com.tw/product/精選實績/公司個案/晴川?mode=year',
+    date: '2024 / 04',
+    title: '桃園辦公室成立',
+    description: '以下為說明文字',
+    imgUrl: '',
+    link: '',
+  },
+  {
+    date: '2024 / 07',
+    title: 'AVAXOTP 專利公告',
+    description: '以下為說明文字',
+    imgUrl: '',
+    link: '',
   },
 ];
 
-const TimelinePage = () => {
+const TimelinePage: React.FC = () => {
   const { t, i18n } = useTranslation();
   const { isBlack } = useColor();
   
@@ -47,7 +48,7 @@ const TimelinePage = () => {
   return (
     <div id='Timeline' className="min-h-screen" style={commonStyles}>
       <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-4">Timeline</h1>
+        <h1 className="text-3xl font-bold mb-4">{t('公司里程碑')}</h1>
         <Timeline data={timelineData} />
       </div>
     </div>
