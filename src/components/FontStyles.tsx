@@ -12,6 +12,7 @@ type FontStyles = {
 const fontStylesMapping: Record<string, { mobile: FontStyles; desktop: FontStyles }> = {
   en: {
     mobile: {
+      maxSlogan: 'text-3xl',
       slogan: 'text-2xl',
       subSlogan: 'text-xl',
       title: 'text-lg',
@@ -19,6 +20,7 @@ const fontStylesMapping: Record<string, { mobile: FontStyles; desktop: FontStyle
       body: 'text-sm',
     },
     desktop: {
+      maxSlogan: 'text-6xl',
       slogan: 'text-5xl',
       subSlogan: 'text-4xl',
       title: 'text-3xl',
