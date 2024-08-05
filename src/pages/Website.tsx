@@ -231,7 +231,7 @@ const AVAXOTP: React.FC = () => {
               srcSet="./images/AV.png"
               className="my-auto max-w-full"
             />
-            <div className='flex flex-col justify-center items-center mt-5'>
+            <div className='flex flex-col justify-center items-center mt-1'>
               <div className="w-[300px] h-2 bg-violet-700 my-4"></div>
               <p className={`sm:${fontStyles.desktop.subtitle} ${fontStyles.mobile.subtitle} text-center font-bold`}>
                 {t('不可追蹤性')}
