@@ -48,7 +48,7 @@ const TimelinePage: React.FC = () => {
   return (
     <div id='Timeline' className="min-h-screen" style={commonStyles}>
       <div className="container mx-auto p-4">
-        <h1 className="text-3xl font-bold mb-4">{t('公司里程碑')}</h1>
+        <h1 className={`sm:${fontStyles.desktop.slogan} ${fontStyles.mobile.slogan} font-bold mb-4`}>{t('公司里程碑')}</h1>
         <Timeline data={timelineData.map(item => ({
           ...item,
           title: t(item.title),

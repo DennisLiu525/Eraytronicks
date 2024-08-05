@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 import { useColor } from '../context/ColorContext';
 import {getFontStyles} from '../components/FontStyles';
 
-const Intro = () => {
+const Intro: React.FC = () => {
   const { t, i18n } = useTranslation();
   const fontStyles = getFontStyles(i18n.language);
 
