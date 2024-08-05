@@ -9,6 +9,7 @@
     "人工智慧運算、量子運算":"AI computing, Quantum computing",
     "關於昱叡電子":"About eRaytroniks",
     "昱叡電子是一間創新型公司，致力於開發先進的記憶體存儲技術，以滿足\n人工智能和量子計算時代對高效能運算的需求。":"eRaytroniks is a startup company. We’re aiming to provide superior memory storage solutions to meet the high computational demands of the AI era and the era of quantum computing.",
+    
     "CACHE$RAM是一種新型的eDRAM技術，能夠在先進的CMOS邏輯平台上實現快速、高帶寬和低延遲的記憶體整合。它有各種應用，如快取記憶體、I/O緩衝區、內存計算以及3DAI記憶體。":"CACHE$RAM is a novel eDRAM technology that enables fast, high-bandwidth, and low-latency memory integration on advanced CMOS logic platforms. It has various applications, such as cache memory, IO buffer, in-memory computing, and 3D AI memory.",
     "高可靠性和極小尺寸":"High reliable and Ultra-Small Size",
     "雙電晶體結構無須額外電容":"2-Transistor structure\nNo additional capacitor",
@@ -24,6 +25,7 @@
     "適用於AI記憶體的3D DRAM集成":"Capable to be used in AI memory\n3D DRAM integration",
     "雙電晶體結構":"2 Transistor Architecture",
     "每個$RAM陣列中的單元由一個控制電晶體和一個浮閘源通道汲極存儲電晶體(FGST)組成。FGST可以簡單地通過一個閘極浮置的nFinFET來實現。這種1T-1FGST$RAM單元僅使用核心VDD作為寫入電壓的Zener隧道機制。當控制閘電晶體關閉後，Zener隧道最終在FGST通道中暫時留下空洞。當控制閘電晶體打開時，可以通過FGST中的正向模式寄生BJT的貢獻來確定存儲的邏輯“1”。相反，沒有電流流動感知到邏輯“0”。":"Each cell in an $RAM array comprised by one control transistor and one Floating Gate source-channel-drain Storage Transistor (FGST). The FGST can be simply implemented by a nFinFET with the gate electrode floated. This 1T-1FGST $RAM cell uses Zener-tunneling mechanism only with core VDD as writing voltage. Zener-tunneling finally leaves holes temporarily in the FGST channel once the control gate transistor turned OFF. A logic “1” storage can be determined via the contribution of forward mode parasitic BJT in FGST when control gate transistor turned ON. On the contrary, no current flow sensed by a logic “0”.",
+    
     "AVAXOTP是一種創新的OTP解決方案。它具有低成本、低操作電壓、卓越的可靠性、非揮發性、編程堅固性和不可追蹤性，非常適合用於高度機密的信息、硬體資安、物聯網、汽車電子以及LCD/LED參數修整應用。":"AVAXOTP unit cell formed by two logic transistors in series features small form-factor, low cost and low operation voltage.",
     "絕佳的資料儲存空間":"Excellent Data Storage",
     "資料可以在攝氏200度的環境維持一個月":"Endure 200 ℃ for 1 month",
@@ -32,6 +34,14 @@
     "不可追蹤性":"High security",
     "專為資安和物聯網設計 具備可擴展性及穩定性的單元":"Scalable and Robust Unit Cell for Information Security and IoT",
     "AVAXOTP單元由兩個串聯的邏輯晶體體組成，具有小尺寸、低成本和低操作電壓等特點。AVAXOTP可以持續微縮，為未來先進技術和相關產品提供了絕佳的發展空間。較低的編程電壓減少了芯片內部充電泵電路的設計工作，降低了現場編程的難度。優異的可靠性、非揮發性、編程堅固性和不可追蹤特性，適用於高安全性、物聯網、汽車電子以及LCD/LED參數修整應用等。":"AVAXOTP unit cell formed by two logic transistors in series features small form-factor, low cost and low operation voltage.\nAVAXOTP can be continually shrunk down which provides an excellent development space for future advanced technology and relative products. Lower programming voltage mitigates the design effort of charge pump circuit within the chip to reduce field-programming difficulty. Excellent reliability, non-volatility, programming robustness and untraceable characteristics benefit for high-security, IOT, Automotive electronics and LCD/LED parameter trimming applications et cetera.",
+    
     "桃園辦公室：320317桃園市中壢區中大路300號":"Taoyuan Office : No. 300, Zhongda Rd., Zhongli Dist.,\nTaoyuan City 320317, Taiwan (R.O.C.)",
-    "產學營運中心229室":"Rm. 229, Center for Academia and Industry Collaboration"
+    "產學營運中心229室":"Rm. 229, Center for Academia and Industry Collaboration",
+
+    "公司里程碑": "Company Milestones",
+    "公司成立": "Company Founded",
+    "AVAXOTP 專利申請": "AVAXOTP Patent Application",
+    "桃園辦公室成立": "Taoyuan Office Established",
+    "AVAXOTP 專利公告": "AVAXOTP Patent Announcement",
+    "以下為說明文字": "This is the description text"
 }

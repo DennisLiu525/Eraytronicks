@@ -49,7 +49,11 @@ const TimelinePage: React.FC = () => {
     <div id='Timeline' className="min-h-screen" style={commonStyles}>
       <div className="container mx-auto p-4">
         <h1 className="text-3xl font-bold mb-4">{t('公司里程碑')}</h1>
-        <Timeline data={timelineData} />
+        <Timeline data={timelineData.map(item => ({
+          ...item,
+          title: t(item.title),
+          description: t(item.description)
+        }))} />
       </div>
     </div>
   );

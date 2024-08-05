@@ -1,4 +1,6 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import {getFontStyles} from '../components/FontStyles';
 
 // Define the interface for timeline items
 interface TimelineItem {
@@ -26,6 +28,9 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
     return acc;
   }, {} as Record<string, TimelineItem[]>);
 
+  const { t, i18n } = useTranslation();
+  const fontStyles = getFontStyles(i18n.language);
+
   return (
     <div className="container mx-auto p-4">
       <div className="relative wrap overflow-hidden p-10 h-full">
@@ -52,9 +57,9 @@ const Timeline: React.FC<TimelineProps> = ({ data }) => {
                     </a>
                   )}
                   <div className="flex-grow">
-                    <h4 className="text-xl font-semibold mb-1">{item.title}</h4>
-                    <span className="mb-1">{item.date}</span>
-                    <p className="py-1">{item.description}</p>
+                    <h4 className={`sm:${fontStyles.desktop.subslogan} ${fontStyles.mobile.subslogan} font-semibold mb-1`}>{item.title}</h4>
+                    <span className={`sm:${fontStyles.desktop.title} ${fontStyles.mobile.title} mb-1`}>{item.date}</span>
+                    <p className={`sm:${fontStyles.desktop.body} ${fontStyles.mobile.body} py-3`}>{item.description}</p>
                   </div>
                   <div className='h-8'></div>
                 </div>
