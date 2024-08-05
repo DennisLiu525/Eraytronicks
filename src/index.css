@@ -37,3 +37,25 @@ body.dark {
 .border-gray-700 {
   border-color: #d1d5db;
 }
+
+.container {
+  padding: 20px;
+}
+
+.list-group-item img {
+  margin-right: 5px;
+}
+
+.list-group-item a {
+  margin-left: 5px;
+  color: inherit;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #ddd;
+}
+
+.copy {
+  color: red;
+}
+

@@ -13,6 +13,7 @@ import { I18nextProvider } from 'react-i18next'
 import { ColorProvider } from './context/ColorContext.tsx';
 import Footer from './pages/Footer.tsx';
 import TimelinePage from './pages/Timeline.tsx';
+import News from './pages/News.tsx';
 
 const {
   Intro: Intro,
@@ -34,9 +35,10 @@ const App: React.FC = () => {
               <div>
                 <Intro />
                 <About />
-                <TimelinePage/>
                 <Cache /> 
                 <AVAXOTP />
+                <News />
+                <TimelinePage/>
                 <Footer />
               </div>
             } />

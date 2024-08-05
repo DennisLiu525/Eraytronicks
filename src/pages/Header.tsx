@@ -287,7 +287,7 @@ const Header: React.FC = () => {
                 {techDropdownOpen && (
                   <div>
                     <div className='border border-white'></div>
-                    <ul className="left-0 mt-2 flex flex-col items-center gap-2 bg-black bg-opacity-75 w-full">
+                    <ul className="left-0 mt-2 flex flex-col items-center gap-2 bg-opacity-75 w-full">
                       <li>
                         <button
                           onClick={() => {

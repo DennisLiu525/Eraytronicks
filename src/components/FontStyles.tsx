@@ -1,8 +1,9 @@
 import React from 'react';
 
 type FontStyles = {
+  maxSlogan: string;
   slogan: string;
-  subslogan: string;
+  subSlogan: string;
   title: string;
   subtitle: string;
   body: string;
@@ -12,14 +13,14 @@ const fontStylesMapping: Record<string, { mobile: FontStyles; desktop: FontStyle
   en: {
     mobile: {
       slogan: 'text-2xl',
-      subslogan: 'text-xl',
+      subSlogan: 'text-xl',
       title: 'text-lg',
       subtitle: 'text-base',
       body: 'text-sm',
     },
     desktop: {
       slogan: 'text-5xl',
-      subslogan: 'text-4xl',
+      subSlogan: 'text-4xl',
       title: 'text-3xl',
       subtitle: 'text-2xl',
       body: 'text-xl',
@@ -27,15 +28,17 @@ const fontStylesMapping: Record<string, { mobile: FontStyles; desktop: FontStyle
   },
   zh_tw: {
     mobile: {
+      maxSlogan: 'text-3xl',
       slogan: 'text-2xl',
-      subslogan: 'text-xl',
+      subSlogan: 'text-xl',
       title: 'text-lg',
       subtitle: 'text-base',
       body: 'text-sm',
     },
     desktop: {
+      maxSlogan: 'text-7xl',
       slogan: 'text-6xl',
-      subslogan: 'text-5xl',
+      subSlogan: 'text-5xl',
       title: 'text-4xl',
       subtitle: 'text-3xl',
       body: 'text-2xl',
@@ -43,15 +46,17 @@ const fontStylesMapping: Record<string, { mobile: FontStyles; desktop: FontStyle
   },
   zh_cn: {
     mobile: {
+      maxSlogan: 'text-4xl',
       slogan: 'text-3xl',
-      subslogan: 'text-2xl',
+      subSlogan: 'text-2xl',
       title: 'text-xl',
       subtitle: 'text-lg',
       body: 'text-base',
     },
     desktop: {
+      maxSlogan: 'text-7xl',
       slogan: 'text-6xl',
-      subslogan: 'text-5xl',
+      subSlogan: 'text-5xl',
       title: 'text-4xl',
       subtitle: 'text-3xl',
       body: 'text-2xl',
